@@ -1,11 +1,10 @@
-import '../styles/authPage.css';
 import gymanLogo from '../assets/gyman_logo.png';
 import { AppDispatch, RootState } from '../store/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { JSXElementConstructor, ReactElement, useEffect } from 'react';
 import { fetchTenantLogo } from '../features/tenant/tenantSlice';
 
-const AuthPage = () => {
+const AuthPage = (props: { form: ReactElement<any, string | JSXElementConstructor<any>>; }) => {
     const dispatch: AppDispatch = useDispatch();
     const tenant = useSelector((state: RootState) => state.tenant);
 
@@ -29,7 +28,19 @@ const AuthPage = () => {
                     </div>
                 </div>
                 <div className="col-md-7 col-12">
-                    col 2
+                    <div className="justify-content-center align-items-center d-flex flex-column" style={{height: '100dvh'}}>
+                        <div className='text-center mb-2'>
+                            <img src={gymanLogo} alt="Gyman Logo" className="logo logo-responsive" />
+                            {tenant.base64logo ? (
+                                <img src={tenant.base64logo} alt='Gyman Logo' className='additional-logo logo-responsive ms-3' />
+                            ): null }
+                        </div>
+                        {props.form}
+                        <div className='intro-section-responsive text-center mt-3'>
+                            <h2 className="sidebar-title">Migliora il tuo allenamento, <br/>ogni giorno.</h2>
+                            <p className="sidebar-text">Scopri un'esperienza fitness personalizzata, sempre a portata di mano.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

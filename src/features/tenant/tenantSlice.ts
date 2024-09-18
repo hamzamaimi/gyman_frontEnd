@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getBase64LogoApi } from "./tenantApi";
 
 // Thunk to fetch the base64 logo asynchronously

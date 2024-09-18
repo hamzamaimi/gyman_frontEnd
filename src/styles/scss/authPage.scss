@@ -1,0 +1,82 @@
+#auth-sidebar {
+  background: linear-gradient(135deg, #4B45F6 0%, #3931f2 100%);
+}
+
+.sidebar-title {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: black;
+}
+
+.sidebar-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem; // Slightly smaller text
+  font-weight: 250;
+  margin: 10px;
+  color: black;
+}
+
+.logo {
+  width: 100px;
+}
+
+.additional-logo {
+  width: 100px;
+}
+
+.auth-form {
+  height: 40%;
+  width: 75%;
+  background-color: rgba(242, 242, 255, 0.7);
+  border-radius: 25px;
+}
+
+@media (min-width: $breakpoint-md) {
+  .auth-form {
+    width: 46%;
+  }
+  
+  .logo-responsive {
+    display:  none;
+  }
+  
+  .logo {
+  width: 200px;
+  }
+
+  .additional-logo {
+    width: 200px;
+  }
+
+  .sidebar-title {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: black;
+  }
+
+  .sidebar-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem; // Slightly smaller text
+    font-weight: 350;
+    margin: 10px;
+    color: black;
+  }
+
+  .intro-section-responsive {
+   display: none;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .auth-form {
+    width: 36%;
+  }
+
+  .logo-responsive{
+    display:  none;
+  }
+}

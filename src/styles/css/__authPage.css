@@ -1,3 +1,10 @@
+:root {
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+}
+
 #auth-sidebar {
     background: linear-gradient(135deg, #4B45F6 0%, #3931f2 100%);
 }
@@ -20,9 +27,22 @@
 
 .logo {
     width: 200px;
-    /* margin-bottom: 30%; */
 }
 
 .additional-logo{
     width: 200px;
+}
+
+.auth-form {
+    height: 40%;
+    width: 50%;
+    background-color: #f2f2ffb3;
+    border-radius: 25px;
+}
+
+/* For medium screens and larger */
+@media (min-width: calc(var(--breakpoint-md))) {
+    .auth-form {
+        width: 36%;
+    }
 }
