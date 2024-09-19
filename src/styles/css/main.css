@@ -27,7 +27,7 @@
 }
 
 .auth-form {
-  height: 40%;
+  min-height: 45%;
   width: 75%;
   background-color: rgba(242, 242, 255, 0.7);
   border-radius: 25px;
@@ -36,6 +36,7 @@
 @media (min-width: 768px) {
   .auth-form {
     width: 46%;
+    min-height: 35%;
   }
   .logo-responsive {
     display: none;
@@ -67,6 +68,7 @@
 @media (min-width: 992px) {
   .auth-form {
     width: 36%;
+    min-height: 35%;
   }
   .logo-responsive {
     display: none;
