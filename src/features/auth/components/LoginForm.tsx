@@ -5,8 +5,9 @@ import { useState } from "react";
 import { isSuccessResponse } from "../../../utils/httpStatusCodeUtils";
 import { setLoggedIn } from "../authSlice";
 import { LoggedIn } from "../../../utils/localeStorageVariables";
-import { errorsDictionary, serverError } from "../../../utils/manageServerErrorResponse";
+import { errorsDictionary, serverError } from "../../../utils/manageServerResponse";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
 const dispatch = useDispatch();
@@ -57,6 +58,9 @@ return(<>
                 <div className="alert alert-danger" role="alert">
                     {errorMessage}
                 </div>: null}
+                <div className="mb-2">
+                    <Link to="/resetPassword">Dimenticato la password?</Link>
+                </div>
                 <button className="btn btn-primary" type="submit">
                     Login
                 </button>   

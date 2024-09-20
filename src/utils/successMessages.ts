@@ -1,0 +1,1 @@
+export const CHECK_PASSWORD_EMAIL = "Puoi accedere usando la password temporanea che hai ricevuto per email.";

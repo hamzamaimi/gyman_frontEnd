@@ -3,14 +3,22 @@ import { AppDispatch, RootState } from '../store/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { JSXElementConstructor, ReactElement, useEffect } from 'react';
 import { fetchTenantLogo } from '../features/tenant/tenantSlice';
+import { clearMessage } from '../features/auth/authSlice';
 
 const AuthPage = (props: { form: ReactElement<any, string | JSXElementConstructor<any>>; }) => {
     const dispatch: AppDispatch = useDispatch();
     const tenant = useSelector((state: RootState) => state.tenant);
+    const message = useSelector((state: RootState) => state.auth.message);
 
     useEffect(() => {
         dispatch(fetchTenantLogo());
-    }, [dispatch])
+
+        if(message){
+            setTimeout(() => {
+                dispatch(clearMessage());
+            }, 95000);
+        }
+    }, [dispatch, message])
     
     return(
         <div className="container-fluid h-100">
@@ -34,6 +42,8 @@ const AuthPage = (props: { form: ReactElement<any, string | JSXElementConstructo
                             {tenant.base64logo ? (
                                 <img src={tenant.base64logo} alt='Gyman Logo' className='additional-logo logo-responsive ms-3' />
                             ): null }
+                            
+                            {message && <div className="alert alert-info mt-1" role="alert">{message}</div>}
                         </div>
                         {props.form}
                         <div className='intro-section-responsive text-center mt-3'>

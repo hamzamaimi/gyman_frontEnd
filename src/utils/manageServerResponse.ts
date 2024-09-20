@@ -9,4 +9,11 @@ export const errorsDictionary: {[key: string]: string} = {
     'Wait some hours between password reset requests.' : 'Hai già richiesto un reset della password. Aspetta qualche ora prima di richiederlo.'
 }
 
+export const successMessagesDictionary: {[key: string]: string} = {
+    'Admin user created successfully.': 'L\'utente di tipo admin è stato creato con successo.',
+    'User created successfully.': 'L\'utente è stato creato con successo.',
+    'If an account with this email exists, a temporary password will be sent.': 'Se esiste un account associato a questa email, verrà inviata una password temporanea.',
+    'You have correctly changed your password.': 'La password è stata correttamente aggiornata.',
+}
+
 export const serverError = 'Si è manifestato un errore del server. Riprovare fra qualche ora o contattere un amministratore di sistema.';

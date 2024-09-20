@@ -11,6 +11,29 @@ export interface serverResponse {
     message: any
 }
 
+export const resetPasswordApi = async (email: string) => {
+  try{
+    const response = await axios.post(`${BASE_API_URL}/api/auth/resetPassword`, email);
+    return {
+      status: response.status,
+      message: response.data,
+    } as serverResponse;
+  } catch (error: any) {
+    if(error.response) {
+      return {
+        status: error.response.status,
+        message: error.response.data || 'An error occurred.',
+      } as serverResponse;
+    } else {
+      return {
+        status: 500,
+        message: 'An unexpected error occurred.'
+      } as serverResponse;
+    }
+  }
+
+}
+
 export const loginApi = async (data: LoginData) => {
     try {
       const response = await axios.post(`${BASE_API_URL}/api/auth/login`, data, {
